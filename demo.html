@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>
+	Rock Paper & Scissor
+</title>
+<link rel="stylesheet" href="rps.css">
+<script>
+var c=0;
+var u=0;
+function rps(e)
+{
+var a=e;
+var s=fun();
+switch(a+s)
+{
+ case "RockScissor": document.getElementById("m").innerHTML="Congrats !! You Win";
+		     document.getElementById("com").innerHTML="Computer choice : "+s;
+		     u++;
+		     document.getElementById("q").innerHTML=u+" : "+c;	
+		     break;
+ case "RockPaper" :  document.getElementById("m").innerHTML="Oops !! You Loss";
+		     document.getElementById("com").innerHTML="Computer choice : "+s;
+                     c++;
+                     document.getElementById("q").innerHTML=u+" : "+c;
+		     break;
+ case "ScissorPaper":document.getElementById("m").innerHTML="Congrats !! You Win";
+		     document.getElementById("com").innerHTML="Computer choice : "+s; 
+                     u++;
+                     document.getElementById("q").innerHTML=u+" : "+c;
+		     break;
+ case "ScissorRock" :document.getElementById("m").innerHTML="Oops !! You Loss";
+		     document.getElementById("com").innerHTML="Computer choice : "+s;
+                     c++;
+                     document.getElementById("q").innerHTML=u+" : "+c;
+		     break;
+ case "PaperRock":   document.getElementById("m").innerHTML="Congrats !! You Win";
+		     document.getElementById("com").innerHTML="Computer choice : "+s;
+                     u++;
+                     document.getElementById("q").innerHTML=u+" : "+c;
+		     break;
+ case "PaperScissor":document.getElementById("m").innerHTML="Oops!!You Loss";
+		     document.getElementById("com").innerHTML="Computer choice : "+s;
+                     c++;
+                     document.getElementById("q").innerHTML=u+" : "+c;
+		     break;
+ default : document.getElementById("m").innerHTML="Tie";
+           document.getElementById("com").innerHTML="Computer choice : "+s;break;
+           document.getElementById("q").innerHTML=u+" : "+c; 
+}
+
+}
+function fun()
+{
+ var d=["Rock","Scissor","Paper"];
+ var r=Math.floor((Math.random()*3)+1);
+ if(r==1)
+   return d[0];
+ else if(r==2)
+  return d[1];
+ else
+  return d[2];
+}
+function mode(e)
+{ 
+var q=e;
+var b=document.getElementById("msg");
+var c=document.getElementById("m");
+var i=document.getElementsByTagName("img");
+var d=document.getElementById("com");
+var e=document.getElementById("qq");
+var f=document.getElementById("q");
+if(q=="d")
+{
+ b.style.color="white";
+ c.style.color="white";
+ d.style.color="white";
+ e.style.background="black";
+ f.style.color="white";
+ b.style.background="green"; 
+}
+else if(q=="b"){
+ b.style.color="white";
+ c.style.color="black";
+ e.style.background="white";
+ f.style.color="black";
+ b.style.borderColor="green";
+ b.style.background="white";
+}
+}
+</script>
+</head>
+<body bgcolor="black" id="qq">
+     <div class="container">
+	<button class="dark" name="d" onclick="mode(this.name)">Dark&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</button>
+	<button class="dark" name="b" onclick="mode(this.name)">Bright</button>
+    </div>
+	<button class="a"  id="r" onclick="rps(this.value)"  value="Rock">
+	<img src="th.jpg" width="55" height="55">
+	</button>
+	<button class="a"  id="s" onclick="rps(this.value)" value="Scissor">
+	<img src="sc.png"width="52" height="52"></button>
+	<button class="a"  id="p" onclick="rps(this.value)" value="Paper">
+	<img src="pa.jpg"width="52" height="52">
+	</button>
+	<h2 align="center" id="head">Player V/s Computer</h2>
+   <div id="msg" align="center">
+	<span id="q" style="color:white; text-align:center; margin-left:-10%;">0 : 0</span>
+   </div><br>
+	<h2 id="m" align="center"></h2>
+	<h2 id="com" align="center"></h2><br>
+</body>
+</html>

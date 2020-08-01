@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="logo.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src='scrollup-master/dist/jquery.scrollUp.min.js'></script>
+    <title>LOGOS</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style: none;
+            user-select: none;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #scrollUp{
+            bottom: 20px;
+            right: 20px;
+            background-image: url('top.png');
+            width: 38px;
+            height: 38px;
+        }
+        @media screen and (min-width: 280px) and (max-width:575px)
+        {
+            .menu{
+                width: 100%;
+                height: 100vh;
+                background-color: black;
+                opacity: 0.7;
+                z-index: 2;
+            }
+            .item{
+                display: none;
+            }
+            header{
+                background-color: chartreuse;
+            }
+            .nav{
+                display: none;
+            }
+            .logo{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1rem;
+            }
+            .open{
+                box-sizing: border-box;
+                border: 2px solid black;
+                padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+                border-radius: 10%;
+            }
+            .menuhead{
+                color: white;
+                font-size: larger;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1rem;
+            }
+            .menu-link{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items:flex-start;
+            }
+            .menu-link li:hover{
+                border: 2px solid white;
+                background-color: gray;
+                padding-left:3rem;
+                text-decoration: none;
+                transition: 0.4s;
+            }
+            .menu-link li{
+                color: white;
+                line-height: 3rem;
+                font-size: 1.3rem;
+                font-weight: bold;
+                font-family: monospace;
+            }
+            .close{
+                font-size: 2.5rem;
+            }
+            
+        }
+        @media screen and (min-width: 576px) and (max-width:768px)
+        {
+            .menu{
+                width: 100%;
+                height: 100vh;
+                background-color: black;
+                opacity: 0.7;
+                z-index: 2;
+            }
+            .item{
+                display: none;
+            }
+            header{
+                background-color: chartreuse;
+                height: 10vh;
+            }
+            .nav{
+                display: none;
+            }
+            .logo{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.3rem;
+                padding: 0.9rem 0.9rem;
+            }
+            .open{
+                box-sizing: border-box;
+                border: 2px solid black;
+                padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+                border-radius: 10%;
+            }
+            .menuhead{
+                color: white;
+                font-size: 1.4rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1rem;
+            }
+            .menu-link{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items:flex-start;
+            }
+            .menu-link li:hover{
+                border: 2px solid white;
+                background-color: gray;
+                padding-left:3rem;
+                width: 100%;
+                text-decoration: none;
+                transition: 0.4s;
+            }
+            .menu-link li{
+                color: white;
+                line-height: 3.5rem;
+                font-size: 1.7rem;
+                font-weight: bold;
+                font-family: monospace;
+            }
+            .close{
+                font-size: 2.7rem;
+            }
+        }
+        @media screen and (min-width: 769px)
+        {
+            .menu{
+                width: 100%;
+                height: 100vh;
+                background-color: black;
+                opacity: 0.7;
+                z-index: 2;
+            }
+            .item{
+                display: none;
+            }
+            header{
+                background-color: chartreuse;
+            }
+            .nav{
+                display: none;
+            }
+            .logo{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1.3rem;
+                padding: 1rem 1rem;
+            }
+            .open{
+                box-sizing: border-box;
+                border: 2px solid black;
+                padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+                border-radius: 10%;
+            }
+            .menuhead{
+                color: white;
+                font-size: larger;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 1rem;
+            }
+            .menu-link{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items:flex-start;
+            }
+            .menu-link li:hover{
+                border: 2px solid white;
+                background-color: gray;
+                padding-left:3rem;
+                text-decoration: none;
+                width: 100%;
+                transition: 0.4s;
+            }
+            .menu-link li{
+                color: white;
+                line-height: 3.5rem;
+                font-size: 1.4rem;
+                font-weight: bold;
+                font-family: monospace;
+            }
+            .close{
+                font-size: 2.5rem;
+            }
+            
+        }
+        @media screen and (min-width: 930px)
+        {
+            .menu{
+                width: 100%;
+                height: 100vh;
+                background-color: black;
+                opacity: 0.7;
+                z-index: 2;
+            }
+            header{
+                background-color: blueviolet;
+                opacity: 0.7;
+                display: flex;
+                height: 10.3vh;
+                color: white;
+                justify-content: space-between;
+                padding: 0 1rem 0 1rem;
+                align-items: center;
+            }
+            header h1{
+                font-size: 3rem;
+            }
+            .nav{
+                display: flex;
+            }
+            .nav ul{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-direction: row;
+                padding: 0 1rem 0 1rem;
+                position: relative;
+            }
+            .nav ul li{
+                position: relative;
+                padding: 0.5rem 0.5rem;
+            }
+            .nav ul li a{
+                font-weight: bold;
+                color: white;
+                font-size: 1.7rem;
+            }
+            span{
+                width: 0;
+                height: 100%;
+                transition: 1s;
+                color: white;
+            }
+            ul li:hover span{
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                transition: 0.5s ease-in-out;
+                border-bottom: 3px solid white;
+            }
+            .open{
+                display: none;
+            }
+            
+        }
+        @media screen and (min-width: 1200px)
+        {
+            header{
+                background-color: blueviolet;
+                opacity: 0.7;
+                display: flex;
+                height: 10.5vh;
+                color: white;
+                justify-content: space-between;
+                padding: 0 1rem 0 1rem;
+                align-items: center;
+            }
+            header h1{
+                 text-shadow: 3px 3px 3px whitesmoke;
+                font-size: 2.7rem;
+            }
+            .nav{
+                display: flex;
+            }
+            .nav ul{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-direction: row;
+                padding: 0 1rem 0 1rem;
+                position: relative;
+            }
+            .nav ul li{
+                position: relative;
+                padding: 0.5rem 0.5rem;
+            }
+            .nav ul li a{
+                font-weight: bold;
+                font-size: x-large;
+                padding-right:1rem;
+            }
+            .nav ul li a::after{
+                content: '';
+                color: white;
+                width: 0;
+                height: 100%;
+                transition: 1s ease-in-out;
+            }
+            .nav ul li:hover a::after{
+                position: absolute;
+                right: 0;
+                bottom:0;
+                width: 100%;
+                transition: 0.5s ease-in-out;
+                height: 100%;
+                border-top: 3px solid white;
+            }
+            span{
+                width: 0;
+                height: 100%;
+                transition: 1s ease-in-out;
+                color: white;
+            }
+            ul li:hover span{
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                transition: 0.5s ease-in-out;
+                border-bottom: 3px solid white;
+            }
+        }
+        img{
+            width: 30%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 class="heading">LOGOS</h1>
+            <h2 class="open openbutton"><a href="#">&#9776;</a></h2>
+        </div>
+        <nav class="nav">
+            <ul class="nav-link">
+                <li>
+                    <span></span>
+                    <a href="index.html" target="_blank" style="color: white">
+                        &nbsp;<i class="fa fa-home" style="color: white;"></i>&nbsp;&nbsp;HOME
+                    </a>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="skills.html" target="_blank" style="color:white">
+                        &nbsp;<i class="fa fa-cogs" style="color: white;"></i>&nbsp;SKILLS
+                    </a>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="myworks.html" target="_blank" style="color: white;">
+                        &nbsp;<i class="fa fa-laptop" style="color: white;"></i>
+                        MYWORKS
+                    </a>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="contact.html" target="_blank" style="color: white;">
+                        &nbsp;&nbsp;<i class="fa fa-mobile" style="color: white;"></i>
+                        CONTACT ME
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu item">
+        <div class="items">
+            <div class="menuhead">
+                <h1>LOGOS</h1>
+                <h1 class="close">
+                    &times;
+                </h1>
+            </div><hr style="color: white;">
+            <br>
+            <ul class="menu-link">
+                <li>
+                    <a href="index.html" target="_blank" style="color: white">
+                        &nbsp;<i class="fa fa-home" style="color: white;"></i>&nbsp;&nbsp;HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="skills.html" target="_blank" style="color:white">
+                        &nbsp;<i class="fa fa-cogs" style="color: white;"></i>&nbsp;SKILLS
+                    </a>
+                </li>
+                <li>
+                    <a href="myworks.html" target="_blank" style="color: white;">
+                        &nbsp;<i class="fa fa-laptop" style="color: white;"></i>
+                        MYWORKS
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" target="_blank" style="color: white;">
+                        &nbsp;&nbsp;<i class="fa fa-mobile" style="color: white;"></i>
+                        CONTACT ME
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div><br><br>
+    <div class="container">
+        <div class="domino d">
+            <img src="domino.jpg" alt="Failed To Load">
+        </div>
+        <div class="domino">
+            <img src="nike.jpg" alt="Failed To Load">
+        </div>
+        <div class="domino">
+            <img src="united.jpg" alt="Failed To Load">
+        </div>
+        <div class="domino">
+            <img src="dell.jpg" alt="Failed To Load">
+        </div>
+    </div><hr><br>
+</body>
+<script>
+    $(function(){
+            $.scrollUp({
+                scrollSpeed:500,
+                scrollImg:true
+            });
+        });
+    let c=document.querySelector('.close');
+    let o=document.querySelector('.open');
+    o.addEventListener('click',function(){
+        //document.querySelector('.menu').style.backr;
+        $(document).ready(function(){
+            $('.menu').css('width','100vw','color','white');
+            $('header').hide();
+            $('.menu').show('slow');
+            $('body').css('background','black','opacity','0.6','z-index','-1');
+            $('.container').hide();
+        });
+
+    });
+    c.addEventListener('click',function(){
+        $('header').show(500);
+        $('.menu').hide('slow');
+        $('body').css('background','white');
+        $('.menu').css('width','0');
+        $('.container').show();
+    });
+</script>
+</html>

@@ -1,0 +1,175 @@
+@media screen and (min-width:280px)
+{
+    .works li,.blogs li{
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 1rem 1rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .works li a,.blogs li a{
+        color: blue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+    }
+    .works li a:hover,.blogs li a:hover{
+        color: blueviolet;
+        text-decoration: underline;
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+        margin-top: 5%;
+    }
+    .blogs h1{
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 2.9rem;   
+    }
+    
+}
+@media screen and (min-width:576px) and (max-width:768px)
+{
+    .works li,.blogs li{
+        font-weight: bold;
+        font-size: 1.4rem;
+        padding: 1rem 1rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .works li a,.blogs li a{
+        color: blue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.4rem;
+    }
+    .works li a:hover,.blogs li a:hover{
+        color: blueviolet;
+        text-decoration: underline;
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.5rem;
+        margin-top: 17%;
+    }
+    .blogs h1{
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 3.2rem;   
+       }
+}
+@media screen and (min-width:769px)
+{
+    .works li,.blogs li{
+        font-weight: bold;
+        font-size: 1.8rem;
+        padding: 1rem 1rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .blogs h1{
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 3.2rem;   
+       }
+    .works li a,.blogs li a{
+        color: blue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.8rem;
+    }
+    .works li a:hover,.blogs li a:hover{
+        color: blueviolet;
+        text-decoration: underline;
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.8rem;
+        margin-top: 13.5%;
+    }
+    
+}
+@media screen and (min-width:992px)
+{
+    .works li,.blogs li{
+        font-weight: bold;
+        font-size: 1.8rem;
+        padding: 1rem 1rem;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .works li a,.blogs li a{
+        color: blue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.8rem;
+    }
+    .blogs h1{
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 3.5rem;   
+    }
+    .works li a:hover,.blogs li a:hover{
+        color: blueviolet;
+        text-decoration: underline;
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.8rem;
+        margin-top: 14%;
+    }
+}
+@media screen and (min-width:1200px)
+{
+    .works li,.blogs li{
+        font-weight: bold;
+        font-size: 1.3rem;
+        padding: 1rem 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .works li a,.blogs li a{
+        color: blue;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3rem;
+    }
+    .works li a:hover,.blogs li a:hover{
+        color: blueviolet;
+        text-decoration: underline;
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-weight: bold;
+        padding: 1rem 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3rem;
+        margin-top: 5%;
+    }
+    .blogs h1{
+     font-weight: bold;
+     font-family: monospace;
+     font-size: 3rem;   
+    }
+}
+.blogs h1{
+    background-color: lightblue;
+}

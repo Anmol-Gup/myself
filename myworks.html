@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel='stylesheet' href='myworks.css'>
+    <script src='scrollup-master/dist/jquery.scrollUp.min.js'></script>
+    <title>MyWorks</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            user-select: none;
+            box-sizing: border-box;
+        }
+        #scrollUp{
+            bottom: 20px;
+            right: 20px;
+            background-image: url('top.png');
+            width: 38px;
+            height: 38px;
+        }
+        ul li {
+            list-style: none;
+        }
+        @media screen and (min-width: 280px) and (max-width: 575px)
+        {
+            .nav{
+                display: none;
+            }
+            .menu{
+                width: 100%;
+                height: 100vh;
+                background-color: black;
+                opacity: 0.8;
+                margin-top: -9.7vh;
+            }
+
+            .menu-link li:hover{
+                border: 2px solid white;
+                background-color: gray;
+                width: 100%;
+                padding-left:3rem;
+                text-decoration: none;
+                transition: 0.4s;
+            }
+            .menuhead{
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem 1rem;
+                align-items: center;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: white;
+                opacity: 0.7;
+            }
+            header{
+                background-color: blueviolet;
+                color: white;
+                opacity: 0.7;
+                height: 9.5vh;
+                font-size: 1rem;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding: 0.9rem 0.9rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            header h1{
+                font-size: 2rem;
+                padding: 1rem 1rem;
+                text-shadow: 1.5px 1.5px 2px white;
+                color: white;
+            }
+            h2{
+                font-size: 1.5rem;
+                box-sizing: border-box;
+                border: 1px solid white;
+                padding-top: 0;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                padding-bottom: 0.2rem;
+                border-radius: 10%;
+            }
+            .menu-link{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items:flex-start;
+            }
+            .menu-link li{
+                color: white;
+                line-height: 3.5rem;
+                font-size: 1.7rem;
+                font-weight: bold;
+                font-family: monospace;
+            }
+            .item{
+                display: none;
+            }
+            .close{
+                font-size: 2.5rem;
+            }
+        }
+        @media screen and (min-width: 576px) and (max-width:768px)
+        {
+            
+            .nav{
+                display: none;
+            }
+            .menu{
+                width: 100%;
+                height: 100vh;
+                background-color: black;
+                opacity: 0.8;
+                margin-top: -9.7vh;
+            }
+            .close{
+                font-size: 3rem;
+            }
+            .menuhead{
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem 1rem;
+                align-items: center;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: white;
+                opacity: 0.7;
+            }
+            header{
+                background-color: blueviolet;
+                opacity: 0.7;
+                height: 9.7vh;
+                font-size: 1rem;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding: 0.9rem 0.9rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            header h1{
+                font-size: 2.4rem;
+                color: white;
+                text-shadow: 3px 3px 2px white;
+                padding: 1rem 1rem;
+            }
+            h2{
+                font-size: 2.3rem;
+                box-sizing: border-box;
+                border: 2px solid white;
+                padding-top:0rem;
+                color: white;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                padding-bottom: 0.3rem;
+                border-radius: 10%;
+            }
+            .menu-link{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+                align-items:flex-start;
+            }
+            .menu-link li{
+                color: white;
+                line-height: 4rem;
+                font-size: 2.5rem;
+                font-weight: bold;
+                font-family: monospace;
+            }
+            .item{
+                display: none;
+            }
+            .menuhead{
+                font-size: 1.5rem;
+            }
+            
+        }
+        @media screen and (min-width: 769px)
+        {
+            .menu{
+                display: none;
+            }
+            .open{
+                display: none;
+            }
+            header
+            {
+                height: 9.6vh;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                background-color: rgb(149, 88, 207);
+                opacity: 0.7;
+            }
+            header h1{
+                float: left;
+                color: white;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                padding: 0.8rem 1rem;
+            }
+            .nav ul li {
+                display: inline;
+            }
+            ul li a{
+                white-space: nowrap;
+                font-weight: bold;
+                font-size: 2.5rem;
+                padding-right: 1rem;
+                color: white;
+                position: relative;
+                font-family: monospace;
+            }
+            ul li a:hover {
+                color: white;
+            }
+            span{
+                width: 0;
+                height: 100%;
+                color: white;
+            }
+            ul li a:hover span{
+                width: 100%;
+                border-bottom: 3px solid white;
+                transition: 0.5s;
+                position: absolute;
+                padding: 0.8rem;
+                top:0;
+                left: 0;
+            }
+        }
+        @media screen and (min-width: 992px)
+        {
+            header h1{
+                font-size: 3rem;
+            }
+            
+        }
+        @media screen and (min-width: 1200px)
+        {
+            header h1{
+                font-size: 2.1rem;
+            }
+            header
+            {
+                height: 9.8vh;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding-right: 2rem;
+                align-items: center;
+                background-color: rgb(149, 88, 207);
+                opacity: 0.7;
+            }
+            .nav {
+                display: flex;
+                justify-content: space-around;
+                align-self:center;
+            }
+            .nav ul li{
+                position: relative;
+                padding: 0.8rem;
+            }
+            span{
+                width: 0;
+                height: 100%;
+                color: white;
+            }
+            ul li:hover span{
+                width: 100%;
+                border-top: 3px solid white;
+                border-bottom: 3px solid white;
+                transition: 0.5s;
+                position: absolute;
+                top:0;
+                left: 0;
+            }
+            ul li a {
+                font-weight: bold;
+                font-size: 1.9rem;
+                color: white;
+                letter-spacing: 1.5%;
+                font-family: monospace;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MYWORKS</h1>
+        <h2 class="open openbutton">&#9776;</h2>
+        <nav class="nav" style="z-index: 3;">
+            <ul class="nav-link">
+                <li>
+                    <span></span>
+                    <a href="index.html" target="_blank" >
+                    HOME
+                    </a>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="skills.html" target="_blank" >
+                    SKILLS
+                    </a>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="myworks.html" target="_blank" class="my">
+                        MYWORKS
+                    </a>
+                </li>
+                <li>
+                    <span></span>
+                    <a href="contact.html" target="_blank">
+                        CONTACTME
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu item">
+        <div class="menuhead">
+            <h1>MYWORKS</h1>
+            <h1 class="close">
+                &times;
+            </h1>
+        </div>
+        <hr style="color: white;"><br>
+        <ul class="menu-link">
+            <li>
+                <a href="index.html" target="_blank" style="color: white">
+                    &nbsp;<i class="fa fa-home" style="color: white;"></i>&nbsp;&nbsp;HOME
+                </a>
+            </li>
+            <li>
+                <a href="skills.html" target="_blank" style="color:white">
+                    &nbsp;<i class="fa fa-cogs" style="color: white;"></i>&nbsp;SKILLS
+                </a>
+            </li>
+            <li>
+                <a href="myworks.html" target="_blank" style="color: white;">
+                    &nbsp;<i class="fa fa-laptop" style="color: white;"></i>
+                    MYWORKS
+                </a>
+            </li>
+            <li>
+                <a href="contact.html" target="_blank" style="color: white;">
+                    &nbsp;&nbsp;<i class="fa fa-mobile" style="color: white;"></i>
+                    CONTACT ME
+                </a>
+            </li>
+        </ul>
+    </div><hr style="color: white;">
+    <br>
+    <section class="main">
+        <div class="box">
+            <ul class="works">
+                <li>
+                    &#10146;&nbsp;Number Guessing Game using HTML5, CSS and JavaScript.
+                    <a href="https://anmol-gup.github.io/guesser/" target="_blank">Click Here</a>
+                </li>
+                <li>
+                    &#10146;&nbsp;Scramble programming words using HTML5 , CSS and JavaScript.
+                    <a href="https://anmol-gup.github.io/scramble/" target="_blank">Click Here</a> 
+                </li>
+                <li>
+                    &#10146;&nbsp;Friendship Calculator using HTML5, CSS and JavaScript.
+                    <a href="https://anmol-gup.github.io/friendshipcalc/" target="_blank">Click Here</a>
+                </li>
+                <li>
+                    &#10146;&nbsp;Flip Card in HTML
+                    <a href="https://anmol-gup.github.io/game/" target="_blank">Click Here</a>
+                </li>
+                <li>
+                    &#10146;&nbsp;Clock
+                    <a href="https://anmol-gup.github.io/intro/" target="_blank">Click Here</a>
+                </li>
+                <li>
+                    &#10146;&nbsp;Portfolio
+                    <a href="https://anmol-gup.github.io/portfolio/" target="_blank">Click Here</a>
+                </li>
+                <li>
+                    &#10146;&nbsp;Logo Designs
+                    <a href="logos.html" target="_blank">Click Here</a>
+                </li>
+                <li>
+                    &#10146;&nbsp;Rock , Paper Scissor & Game in Android App Development.
+                </li>
+                <br>
+            </ul><hr>
+        </div>
+        <div class="blogs">
+            <h1>&nbsp;&nbsp;BLOGS</h1><hr>
+            <ul>
+                <li>
+                    &#10146;&nbsp;Node.js
+                    <a href="" target="_blank">Click Here</a>
+                </li>
+                <li>
+                    &#10146;&nbsp;SQL
+                    <a href="" target="_blank">Click Here</a>
+                </li>
+            </ul>
+        </div><br>
+        <footer><br>
+            <p style=" color:black; text-align:center;">
+                &copy; SuryaGupta 
+                <script>document.write(new Date().getFullYear());
+                </script>. All Rights Reserved. 
+            </p>
+            <p style="color:black; text-align:center;" >
+                Made with &#10084;&#65039; by Surya.
+            </p>
+        </footer>
+    </section>
+    <script>
+        $(function(){
+            $.scrollUp({
+                scrollSpeed:500,
+                scrollImg:true
+            });
+        });
+        let op=document.querySelector('.open');
+        let cl=document.querySelector('.close');
+        var x=window.matchMedia('(min-width:320px)');
+        op.addEventListener('click',()=>{
+            console.log(1);
+            document.querySelector('.main').style.display='none';
+           if(x.matches)
+            {
+                //document.querySelector('.menu').style.display='block';
+                //document.querySelector('header').style.display='none';
+                document.querySelector('.menuhead').style.marginTop='9.9vh';
+                $(document).ready(function(){
+            $('.menu').css('width','100vw');
+            $('header').hide();
+            $('.menu').show('slow');
+    });
+            }
+        });
+        cl.addEventListener('click',()=>{
+            document.querySelector('.main').style.display='block';
+            //document.querySelector('.menu').style.display='none';
+            //document.querySelector('header').style.display='flex';
+            //document.querySelector('h1').style.display='flex';
+            $('header').show(500);
+            $('.menu').hide('slow');
+            $('.menu').css('width','0');
+        });
+    </script>
+</body>
+</html>
