@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <link rel="stylesheet" href="rps.css">
+    <link rel='stylesheet' href='image.css'>
+    <script src='scrollup-master/dist/jquery.scrollUp.min.js'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Portfolio</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+            text-decoration: none;
+            font-family:sans-serif;
+            user-select: none;
+        }
+        #scrollUp{
+            bottom: 20px;
+            right: 20px;
+            background-image: url('top.png');
+            width: 38px;
+            height: 38px;
+        }
+        h1{
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        @media screen and (min-width: 831px)
+        {
+            
+            .home {
+                height: 100%;
+                width: 0%;
+                color: white;
+            }
+            .nav ul li{
+                position: relative;
+                padding: 1rem 1rem;
+            }
+            ul li a:hover .home{
+                box-sizing: border-box;
+                position: absolute;
+                background-color:whitesmoke;
+                width: 100%;
+                border-bottom: 3px solid mediumblue;
+                height: 100%;
+                left:0;
+                z-index: -1;
+                color: white;
+                transition: 0.5s linear;
+                top:0;
+            }
+            ul li a:hover{
+                text-decoration: none;
+            }
+            h2{
+            display: none;
+            }
+            header{
+            background-color: white;
+            height: 10vh;
+            padding-left: 1rem;
+            display: flex;
+            position: sticky;
+            padding-top: 2.3rem;
+            justify-content: space-between;
+            align-items: center;
+            }
+            .menu{
+                display: none;
+            }
+            .open{
+                display: none;
+            }
+            ul li{
+                display: inline;
+                padding-right: 2rem;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-weight: bold;
+            }
+            .nav ul li a:first-child{
+                color: black;
+            }
+            .nav ul li a{
+                font-size: larger;
+            }
+        }
+        @media screen and (min-width: 280px) and (max-width: 576px)
+        {
+            header .port{
+                color: black;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: 2.2rem;
+            }
+            .w{
+                font-size: 1.6rem;
+            }
+            .heading{
+                font-size: 1.6rem;
+            }
+            h5{
+                font-size: 1.2rem;
+            }
+            .contact a{
+                font-size: 1.2rem;
+            }
+        }
+        @media screen and (min-width: 577px) and (max-width: 768px)
+        {
+            header .port{
+                color: black;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: 3rem;
+                padding-top: 1rem;
+            }
+            .open{
+                margin-top: 3%;
+            }
+            .w{
+                font-size: 2.7rem;
+            }
+            .heading{
+                font-size: 2.8rem;
+            }
+            h5{
+                font-size: 1.3rem;
+            }
+        }
+        @media screen and (min-width: 769px)        {
+            header .port{
+                color: black;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: xx-large;
+            }
+            h5{
+                font-size: 1.4rem;
+            }
+        }
+        @media screen and (min-width:992px)
+        {
+            .contact a{
+                font-size: 1.8rem;
+                padding: 1rem 1rem;
+            }
+            h5{
+                font-size: 1.7rem;
+            }
+            header .port{ 
+                font-size: 3rem;
+                padding: 1rem 1rem;
+            }
+            .nav ul li a{
+                font-size: 1.4rem;
+                font-weight: bold;
+                padding: 0.3rem 0.3rem;
+            }
+            .open{
+                display: none;
+            }
+        }
+        @media screen and (max-width:830px)
+        {
+            h2{
+            float: left;
+            box-sizing: border-box;
+            border:1px solid black ;
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            }
+            header {
+            text-align: center;
+            background-color: white;
+            height: 11vh;
+            z-index: -1;
+            align-items: center;
+            padding:0.9rem 0.5rem;
+            width: 100%;
+            }
+            .nav{
+                display: none;
+            }
+            .menu{
+                height: 100vh;
+                width: 100%;
+                margin-top: -11vh;
+                z-index: 3;
+                background-color: black;
+                opacity: 0.7;
+            }
+            .menu a{
+                display: flex;
+                justify-content:stretch;
+                padding-left: 2rem;
+                line-height: 50px;
+                color: white;
+                font-size: larger;
+                align-items: center;
+            }
+            .active:hover {
+                border: 2px solid white;
+                background-color: gray;
+                padding-left:3rem;
+                text-decoration: none;
+                transition: 0.4s;
+            }
+            .menuhead{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: black;
+                opacity: 1;
+                color: white;
+            }
+            .menuhead .m{
+                padding-left:1.5rem;
+                border: none;
+                color: white;
+                font-size: xx-large;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-weight: bold;
+                padding-bottom: 0rem;
+            }
+            .close{
+                font-size: xx-large;
+                border: none;
+                padding-right: 0.5rem;
+                margin-top: -2%;
+                color: white;
+                margin-right: 2%;
+            }
+            .item{
+                display: none;
+            }
+            #h{
+                color: white;
+            }
+            i{
+                color: white;
+            }
+        }
+        @media screen and (min-width: 1200px){
+            header{
+            background-color: white;
+            height: 10vh;
+            padding-left: 1rem;
+            display: flex;
+            position: sticky;
+            padding-top: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            }
+            header .port{
+                color:mediumblue;
+                text-shadow: 5px 5px 5px lightblue;
+                font-family: sans-serif;
+                font-size: 2.5rem;
+            }
+            h5{
+            font-size: 1.5rem;
+            }
+            .contact a{
+                font-size: 1.5rem;
+            }
+            .open{
+                display: none;
+            }
+        }
+        .about{
+            font-family: 'Courier New', Courier, monospace;
+            color: black;
+        }
+        .my{
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="container-fluid">
+        <h2 class="open openbutton" onclick="openfunc()">&#9776;</h2>
+        <h1 class="about port">PORTFOLIO</h1>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="index.html" target="_blank"  id="#g">
+                        <span class='home'></span>HOME
+                    </a>
+                </li>
+                <li>
+                    <a href="#skills" class="js-scroll-trigger" >
+                        <span class='home'></span>SKILLS
+                    </a>
+                </li>
+                <li>
+                    <a href="#inter" class="js-scroll-trigger" ><span class='home'>
+                    </span>INTERNSHIPS
+                </a>
+                </li>
+                <li>
+                    <a href="#myworks" class="js-scroll-trigger">
+                        <span class='home'></span>MYWORKS
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>    
+    <div class="menu item"><br>
+        <div class="menuhead">
+            <h2 class="m">PORTFOLIO</h2>
+            <h2 class="close" onclick="closefunc()">
+                <i class="fa fa-remove" style="color: white;"></i>
+            </h2>
+        </div><br>
+        <a href="#" target="_blank" class="active"  id="h" style="font-size: larger;">
+            <i class="fa fa-home"></i>&nbsp;&nbsp;HOME
+        </a>
+        <a href="#" target="skills.html" class="active" >
+            <i class="fa fa-cogs"></i>&nbsp;SKILLS
+        </a>
+        <a href="myworks.html" class="active" >
+            <i class="fa fa-laptop"></i>&nbsp;MYWORKS
+        </a>
+        <a href="contact.html" target="_blank" class="active" >
+            <i class='fa fa-phone' style="font-size: larger;"></i>&nbsp;&nbsp;CONTACT ME
+        </a>
+    </div>
+    <section>
+        <div class="box1 container-fluid">
+            <div class="box2">
+                <h1 class="heading">Hello, I am </h1>
+                <br>
+                <h1 class="w">I am a </h1>
+                <br>
+                <h4 class="contact">
+                    <a href="contact.html" target="_blank">
+                    <span id="con"></span>CONTACT ME
+                    </a>
+                </h4>
+            </div>
+        </div><br>
+        <Center>
+            <h1 class="about my">ABOUT ME</h1>
+        </Center>
+        <hr><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 xs-6"><br>
+                    <figure>
+                        <img src="surya.jpg" alt="Failed To Load" class="img-responsive rounded mx-auto d-block">
+                    </figure>
+                </div>
+                <div class="col-md-6 xs-6"><br>
+                    <div class="container-fluid myself" align="center">
+                        
+                        <h5 style="font-family: serif;">&ldquo;&nbsp;My name is <span style="color: blue;">Surya P. Gupta.</span>
+                        I live in Prayagraj, Uttar Pradesh. I am pursuing Bachelor of Technology from Computer 
+                        Science & Engineering . In my spare time, i listen music and do some logo designing.
+                        I like to do Web Design . Apart from this, i also like to do Android App Development.
+                        &rdquo;</h5>
+                        <h4 class="dot">. . .</h4><br>
+                    </div>
+                </div>
+            </div>
+        </div><hr>
+        <div class="container-fluid" style="background-color: antiquewhite; width: 100%;">
+            <div class="components container">
+                <br>
+                <p style="color: black;" id='institute'>
+                    <i class="fa fa-university fa_custom" aria-hidden="true"></i>
+                    Education & Qualifications
+                </p><hr>
+                <div class="container edu">
+                    <ul class="education container-fluid">
+                        <p class="e">
+                            &#10146;&nbsp;Passed class 12 from E.C.P.S.S.School ,Prayagraj with a percentage of 88%.
+                        </p>
+                        <p class="e">
+                            &#10146;&nbsp;Passed class 10 from E.C.P.S.S.School ,Prayagraj with a CGPA of 9.4.
+                        </p>
+                        <p class="e">
+                            &#10146;&nbsp;Pursuing Bachelor of Technology from UCEM , Prayagraj.
+                        </p>
+                    </ul>
+                </div><br><hr>
+            </div>
+        </div>
+        <div class="intern" style="background-color:oldlace" id='inter'>
+            <ul class="container in">
+                <p style="color: black;" id='institute'>
+                    <i class="fa fa-send fa_custom" aria-hidden="true"></i>
+                    Internships
+                </p>
+            <p class="in">
+                &#10146;&nbsp;Campus Ambassador from TechFest Sliet through Intershala.
+            </p>
+            <p class="in">
+                &#10146;&nbsp;Social Media  Marketing internship at Brandiverse through Intershala.
+            </p>
+            <p class="in">
+                &#10146;&nbsp;Internship in Business Development, Marketing and Sales from MyCaptain.
+            </p>
+            </ul>
+            <ul class=" container skills"><br>
+                <p style="color: black;" id='institute'>
+                    <i class="fas" style="font-size:2rem"> &#xf559;&nbsp; </i>
+                    Certificates
+                </p>
+            <p class="in">
+                &#10146;&nbsp;Secured Elite Certificate from NPTEL in Developing Soft Skills & Personality
+                Development.
+            </p>
+            <p class="in">
+                &#10146;&nbsp;Secured Elite+Gold Certificate from NPTEL in Enhancing Soft Skills & Personality
+                Development.
+            </p>
+            <p class="in">
+                &#10146;&nbsp;Secured 3rd prize in Art From Waste in Dr. Abdul Kalam Arts and Cultural Fest 2019-20.
+            </p>
+            </ul>
+        </div><hr><br>
+        <div class="container workskill" id='myworks'>
+            <div class="work">
+                <!--<h1 class='laptop'><i class="fa fa-laptop" aria-hidden="true"></i></h1>-->
+                <img src="https://img.icons8.com/fluent/96/000000/hard-working.png"/>
+                <p class="lap">My Works</p>
+                <a href="myworks.html" target="_blank" class="hovereffect">Click Here</a>
+            </div>
+            <br><br>
+            <div class="sk" id='skills'>
+            <!-- <img src="https://img.icons8.com/bubbles/100/000000/development-skill.png"/>-->
+                
+                <img src="https://img.icons8.com/clouds/100/000000/development-skill.png"/>
+                <p class="lap">Skills</p>
+                <a href="skills.html" target="_blank" class="hovereffect">Click Here</a>
+            </div>
+        </div><br>
+        <br><br><br><br>
+        <footer class="container-fluid socialcontact" id="e">
+            <div class="row">
+                <div class="container">
+                    <br>
+                    <h4 align="center" style="color: white;">Follow Me On :</h4>
+                    <div sclass="social" align="center">
+                        <ul class="links">
+                            <p>
+                                <a href="https://www.facebook.com/profile.php?id=100024963634024">
+                                    <i class="fa fa-facebook-square teal-color " ></i>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="https://www.facebook.com/profile.php?id=100024963634024">
+                                    <i class="fa fa-linkedin-square teal-color " ></i>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="https://www.linkedin.com/in/surya-gupta-39b497180/">
+                                    <i class="fa fa-instagram teal-color " ></i>
+                                </a>
+                            </p>
+                            <p>
+                                <a href="https://www.youtube.com/channel/UCQPVqxI3JLKQBkC3VFlG3bg" target='_blank'>
+                                    <i class="fa fa-youtube-play teal-color " ></i>
+                                </a>
+                            </p>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contactme container">
+                    <p style="color: white;" align="center">
+                        <i class="fa fa-mobile" style="font-size: 3rem;"></i><br>
+                        Contact No. : +91 7317482162
+                    </p>
+                    <p style="color: white;" align="center">
+                        <i class="fa fa-envelope" style="font-size: 2rem;"></i><br>
+                        Email:<a href="mailto:spg@gmailcom?">&nbsp;sp430661@gmail.com</a>
+                    </p>
+                    <p style=" color:white; text-align:center;">
+                        &copy; SuryaGupta 
+                        <script>document.write(new Date().getFullYear());
+                        </script>. All Rights Reserved. 
+                    </p>
+                    <p style="color:white; text-align:center;" >
+                        Made with &#10084;&#65039; by Surya.
+                    </p>
+                </div>
+            </div>
+        </footer>
+</section>
+    <script>
+        $(function(){
+            $.scrollUp({
+                scrollSpeed:500,
+                scrollImg:true
+            });
+        });
+        let openbut=document.querySelector('.open');
+        let closebut=document.querySelector('.close');
+        function openfunc()
+        {
+            document.querySelector('.menu').style.marginTop='-11vh';
+            document.querySelector('h1').style.display='none';
+            openbut.style.display='none';   
+            $(document).ready(function(){
+            $('.menu').css('width','100vw');
+            //$('header').hide();
+            $('.menu').show('slow');
+        });
+            document.querySelector('section').style.display='none';
+        }
+        document.querySelector('.active').addEventListener('click',function(){
+            this.style.color='white';
+        })
+
+        function closefunc()
+        {
+            document.querySelector('.menu').style.display='none';    
+            openbut.style.display='block'; 
+            document.querySelector('h1').style.display='block';
+            document.querySelector('h1').style.textAlign='center';
+            $(document).ready(function(){
+            $('.menu').css('width','0');
+            $('header').show('slow');
+            $('.menu').hide('slow');
+    });
+            document.querySelector('section').style.display='block';
+            
+        }
+    </script>
+</body>
+</html>
